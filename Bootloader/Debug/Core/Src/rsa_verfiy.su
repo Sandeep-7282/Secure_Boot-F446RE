@@ -1,8 +1,0 @@
-../Core/Src/rsa_verfiy.c:7:13:bn_zero	16	static
-../Core/Src/rsa_verfiy.c:8:13:bn_copy	16	static
-../Core/Src/rsa_verfiy.c:10:13:bn_one	16	static
-../Core/Src/rsa_verfiy.c:16:12:bn_cmp	24	static
-../Core/Src/rsa_verfiy.c:25:13:bn_addmod	312	static
-../Core/Src/rsa_verfiy.c:52:13:bn_mulmod	552	static
-../Core/Src/rsa_verfiy.c:72:13:bn_powmod	544	static
-../Core/Src/rsa_verfiy.c:102:12:rsa_verify	304	static

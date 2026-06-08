@@ -1,5 +1,0 @@
-../Core/Src/uart.c:11:13:uart_gpio_init	4	static
-../Core/Src/uart.c:23:6:uart_init	8	static
-../Core/Src/uart.c:40:6:uart_send_char	16	static
-../Core/Src/uart.c:46:6:uart_send_str	16	static
-../Core/Src/uart.c:52:6:uart_read_char	4	static
