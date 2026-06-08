@@ -1,0 +1,11 @@
+#include <main.h>
+#include <uart.h>
+
+int main(void){
+	uart_init();
+	uart_send_str("Welcome to Bootloader\n");
+	char ch;
+	ch=uart_read_char();
+	uart_send_char(ch);
+	while(1);
+}

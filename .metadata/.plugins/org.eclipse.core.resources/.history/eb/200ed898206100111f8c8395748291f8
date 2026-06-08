@@ -1,0 +1,13 @@
+#include <main.h>
+#include <uart.h>
+#include <app_jump.h>
+
+#define APP_BASE 0x08020000
+
+int main(void){
+	uart_init();
+	uart_send_str("Welcome to Bootloader\n");
+	uart_send_str("Jumping to Application.......\n");
+	boot_jump_to_application(APP_BASE);
+	while(1);
+}

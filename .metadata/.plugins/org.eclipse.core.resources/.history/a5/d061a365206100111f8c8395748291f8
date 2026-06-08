@@ -1,0 +1,41 @@
+/*
+ * app_jump.c
+ *
+ *  Application handoff logic.
+ *
+ */
+
+#include "app_jump.h"
+#include "uart.h"
+#include "stm32f4xx.h"
+
+void boot_jump_to_application(uint32_t app_base)
+{
+    uint32_t app_msp   = *(uint32_t *)(app_base + 0x00);
+    uint32_t app_reset = *(uint32_t *)(app_base + 0x04);
+
+    uart_puts("Jumping to application\r\n");
+
+    __disable_irq();
+    SysTick->CTRL = 0;
+
+    /* Disable all NVIC interrupts */
+    for (uint32_t i = 0; i < 8; i++)
+    {
+        NVIC->ICER[i] = 0xFFFFFFFF;
+        NVIC->ICPR[i] = 0xFFFFFFFF;
+    }
+
+    SCB->SHCSR = 0;  /* Clear fault enables */
+
+    __set_MSP(app_msp);
+    SCB->VTOR = app_base;
+
+    __DSB();
+    __ISB();
+    __enable_irq();
+
+    ((void (*)(void))app_reset)();
+
+    while (1);
+}

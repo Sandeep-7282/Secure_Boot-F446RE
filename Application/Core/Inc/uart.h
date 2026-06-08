@@ -1,0 +1,16 @@
+/*
+ * uart.h
+ *
+ *  Created on: Dec 23, 2025
+ *      Author: sande
+ */
+
+#ifndef INC_UART_H_
+#define INC_UART_H_
+
+void uart_init(void);
+void uart_send_char(char c);
+void uart_send_str(const char *s);
+char uart_read_char(void);
+
+#endif /* INC_UART_H_ */

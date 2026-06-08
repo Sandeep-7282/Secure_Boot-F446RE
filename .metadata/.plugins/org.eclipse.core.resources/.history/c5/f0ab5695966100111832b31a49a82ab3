@@ -1,0 +1,13 @@
+/*
+ * boot_verify.h
+ *
+ *  Created on: Jun 6, 2026
+ *      Author: sande
+ */
+
+#ifndef INC_BOOT_VERIFY_H_
+#define INC_BOOT_VERIFY_H_
+
+
+
+#endif /* INC_BOOT_VERIFY_H_ */

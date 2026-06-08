@@ -1,0 +1,66 @@
+/*
+ * boot_verify.c
+ *
+ *  Created on: Jun 6, 2026
+ *      Author: sande
+ */
+#include "boot_verify.h"
+#include "boot_metadata.h"
+#include "sha256.h"
+#include "rsa_verify.h"
+#include "public_key.h"
+#include "uart.h"
+#include <string.h>
+
+#define SECTOR3_BASE_ADDR  0x0800C000UL
+
+BootVerifyStatus boot_verify_application(void)
+{
+    /* Step 1: Read metadata from Sector 3 */
+    BootMetadata_t *meta = (BootMetadata_t *)SECTOR3_BASE_ADDR;
+
+    /* Step 2: Magic number check */
+    if (meta->magic != BOOT_MAGIC) {
+        uart_send_str("[BOOT] ERROR: Invalid magic number\r\n");
+        return BOOT_VERIFY_FAIL;
+    }
+    uart_send_str("[BOOT] Magic OK\r\n");
+
+    /* Step 3: Sanity check app address and size */
+    if (meta->app_start_address != 0x08020000UL) {
+        uart_send_str("[BOOT] ERROR: Invalid app start address\r\n");
+        return BOOT_VERIFY_FAIL;
+    }
+
+    if (meta->app_size == 0 || meta->app_size > (384 * 1024)) {
+        uart_send_str("[BOOT] ERROR: Invalid app size\r\n");
+        return BOOT_VERIFY_FAIL;
+    }
+    uart_send_str("[BOOT] Metadata sanity OK\r\n");
+
+    /* Step 4: Compute SHA256 of application */
+    uint8_t computed_hash[32];
+    sha256_compute(
+        (const uint8_t *)meta->app_start_address,
+        meta->app_size,
+        computed_hash
+    );
+    uart_send_str("[BOOT] SHA256 computed\r\n");
+
+    /* Step 5: RSA verify signature against computed hash */
+    RSA_VerifyStatus result = rsa_verify(
+        meta->signature,
+        computed_hash,
+        RSA_PUBLIC_MODULUS,
+        RSA_PUBLIC_EXPONENT
+    );
+
+    if (result != RSA_VERIFY_OK) {
+        uart_send_str("[BOOT] ERROR: Signature verification FAILED\r\n");
+        return BOOT_VERIFY_FAIL;
+    }
+
+    uart_send_str("[BOOT] Signature verification PASSED\r\n");
+    return BOOT_VERIFY_OK;
+}
+
