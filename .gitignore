@@ -1,0 +1,10 @@
+# Private key
+private_key.pem
+
+# Build artifacts
+*.bin
+*.elf
+*.map
+*.hex
+Debug/
+Release/

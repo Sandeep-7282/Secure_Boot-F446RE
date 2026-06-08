@@ -35,17 +35,17 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_rnglists 000001f9  00000000  00000000  000062c8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  0002034d  00000000  00000000  000064c1  2**0
+ 16 .debug_macro  00020353  00000000  00000000  000064c1  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   000044a2  00000000  00000000  0002680e  2**0
+ 17 .debug_line   000044a2  00000000  00000000  00026814  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000c4b9c  00000000  00000000  0002acb0  2**0
+ 18 .debug_str    000c4baa  00000000  00000000  0002acb6  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  000ef84c  2**0
+ 19 .comment      00000043  00000000  00000000  000ef860  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000008d4  00000000  00000000  000ef890  2**2
+ 20 .debug_frame  000008d4  00000000  00000000  000ef8a4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000057  00000000  00000000  000f0164  2**0
+ 21 .debug_line_str 00000057  00000000  00000000  000f0178  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -202,9 +202,9 @@ __STATIC_FORCEINLINE void __set_MSP(uint32_t topOfMainStack)
  80002a0:	e000ed00 	.word	0xe000ed00
 
 080002a4 <boot_verify_application>:
-#include <string.h>
 
-#define SECTOR3_BASE_ADDR  0x0800C000UL
+#define META_BASE_ADDR  0x0800C000UL
+#define MAX_APP_SIZE 384
 
 BootVerifyStatus boot_verify_application(void)
 {
@@ -212,7 +212,7 @@ BootVerifyStatus boot_verify_application(void)
  80002a6:	b08a      	sub	sp, #40	@ 0x28
  80002a8:	af00      	add	r7, sp, #0
     /* Step 1: Read metadata from Sector 3 */
-    BootMetadata_t *meta = (BootMetadata_t *)SECTOR3_BASE_ADDR;
+    BootMetadata_t *meta = (BootMetadata_t *)META_BASE_ADDR;
  80002aa:	4b2b      	ldr	r3, [pc, #172]	@ (8000358 <boot_verify_application+0xb4>)
  80002ac:	627b      	str	r3, [r7, #36]	@ 0x24
 
@@ -249,7 +249,7 @@ BootVerifyStatus boot_verify_application(void)
  80002da:	e038      	b.n	800034e <boot_verify_application+0xaa>
     }
 
-    if (meta->app_size == 0 || meta->app_size > (384 * 1024)) {
+    if (meta->app_size == 0 || meta->app_size > (MAX_APP_SIZE * 1024)) {
  80002dc:	6a7b      	ldr	r3, [r7, #36]	@ 0x24
  80002de:	689b      	ldr	r3, [r3, #8]
  80002e0:	2b00      	cmp	r3, #0

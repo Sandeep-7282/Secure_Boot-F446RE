@@ -3064,7 +3064,7 @@ LOAD C:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_rnglists
                 0x0000014a       0xaf ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
 
-.debug_macro    0x00000000    0x2034d
+.debug_macro    0x00000000    0x20353
  .debug_macro   0x00000000      0x1c4 ./Core/Src/app_jump.o
  .debug_macro   0x000001c4      0xad8 ./Core/Src/app_jump.o
  .debug_macro   0x00000c9c       0x22 ./Core/Src/app_jump.o
@@ -3102,33 +3102,33 @@ LOAD C:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x0001ec15       0xe8 ./Core/Src/app_jump.o
  .debug_macro   0x0001ecfd       0x89 ./Core/Src/app_jump.o
  .debug_macro   0x0001ed86      0x126 ./Core/Src/app_jump.o
- .debug_macro   0x0001eeac      0x179 ./Core/Src/boot_verify.o
- .debug_macro   0x0001f025       0x10 ./Core/Src/boot_verify.o
- .debug_macro   0x0001f035       0x10 ./Core/Src/boot_verify.o
- .debug_macro   0x0001f045       0x10 ./Core/Src/boot_verify.o
- .debug_macro   0x0001f055       0x61 ./Core/Src/boot_verify.o
- .debug_macro   0x0001f0b6       0x2a ./Core/Src/boot_verify.o
- .debug_macro   0x0001f0e0       0x43 ./Core/Src/boot_verify.o
- .debug_macro   0x0001f123       0x34 ./Core/Src/boot_verify.o
- .debug_macro   0x0001f157      0x370 ./Core/Src/boot_verify.o
- .debug_macro   0x0001f4c7       0x16 ./Core/Src/boot_verify.o
- .debug_macro   0x0001f4dd       0x4a ./Core/Src/boot_verify.o
- .debug_macro   0x0001f527       0x34 ./Core/Src/boot_verify.o
- .debug_macro   0x0001f55b       0x10 ./Core/Src/boot_verify.o
- .debug_macro   0x0001f56b       0x58 ./Core/Src/boot_verify.o
- .debug_macro   0x0001f5c3       0x8e ./Core/Src/boot_verify.o
- .debug_macro   0x0001f651       0x1c ./Core/Src/boot_verify.o
- .debug_macro   0x0001f66d      0x185 ./Core/Src/boot_verify.o
- .debug_macro   0x0001f7f2       0x10 ./Core/Src/boot_verify.o
- .debug_macro   0x0001f802       0x3c ./Core/Src/boot_verify.o
- .debug_macro   0x0001f83e       0x20 ./Core/Src/boot_verify.o
- .debug_macro   0x0001f85e      0x1de ./Core/Src/main.o
- .debug_macro   0x0001fa3c      0x156 ./Core/Src/rsa_verfiy.o
- .debug_macro   0x0001fb92      0x16e ./Core/Src/sha256.o
- .debug_macro   0x0001fd00      0x1c4 ./Core/Src/stm32f4xx_it.o
- .debug_macro   0x0001fec4      0x1b0 ./Core/Src/system_stm32f4xx.o
- .debug_macro   0x00020074       0xc9 ./Core/Src/uart.o
- .debug_macro   0x0002013d      0x210 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_macro   0x0001eeac      0x17f ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f02b       0x10 ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f03b       0x10 ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f04b       0x10 ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f05b       0x61 ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f0bc       0x2a ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f0e6       0x43 ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f129       0x34 ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f15d      0x370 ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f4cd       0x16 ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f4e3       0x4a ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f52d       0x34 ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f561       0x10 ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f571       0x58 ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f5c9       0x8e ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f657       0x1c ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f673      0x185 ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f7f8       0x10 ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f808       0x3c ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f844       0x20 ./Core/Src/boot_verify.o
+ .debug_macro   0x0001f864      0x1de ./Core/Src/main.o
+ .debug_macro   0x0001fa42      0x156 ./Core/Src/rsa_verfiy.o
+ .debug_macro   0x0001fb98      0x16e ./Core/Src/sha256.o
+ .debug_macro   0x0001fd06      0x1c4 ./Core/Src/stm32f4xx_it.o
+ .debug_macro   0x0001feca      0x1b0 ./Core/Src/system_stm32f4xx.o
+ .debug_macro   0x0002007a       0xc9 ./Core/Src/uart.o
+ .debug_macro   0x00020143      0x210 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
 
 .debug_line     0x00000000     0x44a2
  .debug_line    0x00000000      0x782 ./Core/Src/app_jump.o
@@ -3142,18 +3142,18 @@ LOAD C:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_line    0x00003a39       0x7a ./Core/Startup/startup_stm32f446retx.o
  .debug_line    0x00003ab3      0x9ef ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
 
-.debug_str      0x00000000    0xc4b9c
- .debug_str     0x00000000    0xc4b9c ./Core/Src/app_jump.o
+.debug_str      0x00000000    0xc4baa
+ .debug_str     0x00000000    0xc4baa ./Core/Src/app_jump.o
                               0xc08f1 (size before relaxing)
- .debug_str     0x000c4b9c     0x7501 ./Core/Src/boot_verify.o
- .debug_str     0x000c4b9c    0xc0837 ./Core/Src/main.o
- .debug_str     0x000c4b9c     0x7489 ./Core/Src/rsa_verfiy.o
- .debug_str     0x000c4b9c     0x7530 ./Core/Src/sha256.o
- .debug_str     0x000c4b9c    0xc0812 ./Core/Src/stm32f4xx_it.o
- .debug_str     0x000c4b9c    0xc0961 ./Core/Src/system_stm32f4xx.o
- .debug_str     0x000c4b9c    0x8ac0b ./Core/Src/uart.o
- .debug_str     0x000c4b9c       0x73 ./Core/Startup/startup_stm32f446retx.o
- .debug_str     0x000c4b9c    0xc1526 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_str     0x000c4baa     0x750f ./Core/Src/boot_verify.o
+ .debug_str     0x000c4baa    0xc0837 ./Core/Src/main.o
+ .debug_str     0x000c4baa     0x7489 ./Core/Src/rsa_verfiy.o
+ .debug_str     0x000c4baa     0x7530 ./Core/Src/sha256.o
+ .debug_str     0x000c4baa    0xc0812 ./Core/Src/stm32f4xx_it.o
+ .debug_str     0x000c4baa    0xc0961 ./Core/Src/system_stm32f4xx.o
+ .debug_str     0x000c4baa    0x8ac0b ./Core/Src/uart.o
+ .debug_str     0x000c4baa       0x73 ./Core/Startup/startup_stm32f446retx.o
+ .debug_str     0x000c4baa    0xc1526 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 ./Core/Src/app_jump.o
